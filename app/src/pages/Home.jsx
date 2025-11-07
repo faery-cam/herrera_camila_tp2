@@ -1,10 +1,17 @@
 
 
 export default function Home() {
-    return (
-        <>
-          
-        </>
-    )
+  return (
+
+      <section style={{ backgroundImage: "url('/assets/img/antsa.webp')" }}>
+
+
+
+
+
+
+      </section>
+    
+  )
 
 }
