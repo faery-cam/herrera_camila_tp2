@@ -18,7 +18,7 @@ const paginas = [
     {
         to: '/galeria',
         label: 'galeria',
-        children: [{ to: '/filtrovideos', label: 'filtro' }],
+        children: [{ to: '/videos', label: 'videos' }],
     },
     { to: '/baile', label: 'Baile' },
 ]

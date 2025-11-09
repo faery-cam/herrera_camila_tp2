@@ -1,5 +1,5 @@
 
-export default function FiltroVideos() {
+export default function Videos() {
     return (
         <>
             <section className="p-6">

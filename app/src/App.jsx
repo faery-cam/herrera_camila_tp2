@@ -8,7 +8,7 @@ import Contacto from './pages/Contacto.jsx';
 import Historia from './pages/Historia.jsx';
 import Miembros from './pages/Miembros.jsx';
 import Galeria from './pages/Galeria.jsx';
-import FiltroVideos from './pages/FiltroVideos.jsx';
+import Videos from './pages/Videos.jsx';
 import Baile from './pages/Baile.jsx';
 
 
@@ -26,7 +26,7 @@ export default function App() {
           <Route path="/historia" element={<Historia />} />
           <Route path="/miembros" element={<Miembros />} />
           <Route path="/galeria" element={<Galeria />} />
-          <Route path="/filtrovideos" element={<FiltroVideos />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/baile" element={<Baile />} />
         </Routes>
       </main>
