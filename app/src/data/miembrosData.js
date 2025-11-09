@@ -1,14 +1,14 @@
-export const miembrosData = [
+const miembrosData = [
     {
         id: "1",
         nombre: "Shibaken",
-        img: ["/assets/miembros/shibaken.webp"],
+        img: ["/assets/img/shibaken.webp"],
         bio: "bla",
     },
     {
         id: "2",
         nombre: "Marin",
-        img: ["/assets/miembros/marin.webp"],
+        img: ["/assets/img/marin.webp"],
         bio: "bla",
     },
     {
@@ -29,4 +29,6 @@ export const miembrosData = [
         img: ["assets/img/naoya.webp"],
         bio: "bla",
     },
-]
+];
+
+export default miembrosData;
