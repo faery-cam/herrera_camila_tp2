@@ -37,7 +37,7 @@ export default function NavBar({ compact }) {
     const linkClass = (isActive) =>
         isActive
             ? 'text-white bg-blue-600'
-            : 'text-white/90 hover:bg-white/10';
+            : 'text-black/90 hover:bg-white/10';
 
     if (isCompact) {
         return (
