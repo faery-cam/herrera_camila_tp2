@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function validarForm(valoresIniciales) {
-    
-    const [formData, setFormData] = useState({ valoresIniciales });
+
+    const [formData, setFormData] = useState(valoresIniciales);
+
+    const [errors, setErrors] = useState(valoresIniciales);
 
     const [submitted, setSubmitted] = useState(false);
 
-    const [errors, setErrors] = useState({});
-
-    useEffect(() => {
-        if (!submitted) {
-            setFormData(valoresIniciales);
-            setErrors(valoresIniciales);
-        }
-    }, [submitted]);
+    function resetForm() {
+        setFormData(valoresIniciales);
+        setErrors({});
+        setSubmitted(false);
+    }
 
     const emailRegex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]{1,64}(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$/i;
     const celRegex = /^(?:\d{10,11})$/;
@@ -27,7 +26,15 @@ export default function validarForm(valoresIniciales) {
         const { name, value } = event.target;
         setFormData(prev => ({ ...prev, [name]: value }));
 
-        if (errors[name]) setErrors(prev => ({ ...prev, name: "" }));
+        let msjError = "";
+
+        if (name === "email" && !emailRegex.test(value)) {
+            msjError = "Mail inválido"
+        } else if (name === "celular" && !validarCel(value)) {
+            msjError = "Celular inválido, por favor ingresá solo números, incluyendo el código de área, sin el +54."
+        }
+
+        setErrors(prev => ({ ...prev, [name]: msjError }));
     }
 
     function handleSubmit(event) {
@@ -35,7 +42,6 @@ export default function validarForm(valoresIniciales) {
         event.preventDefault();
         const { nombre, apellido, celular, email, motivo, otroMotivo, mensaje } = formData;
         const newErrors = {};
-
 
         if (!nombre.trim()) newErrors.nombre = "Completá con tu Nombre.";
         if (!apellido.trim()) newErrors.apellido = "Completá con tu Apellido.";
@@ -52,5 +58,5 @@ export default function validarForm(valoresIniciales) {
         }
     }
 
-
+    return { formData, errors, handleChange, handleSubmit, submitted, resetForm }
 }

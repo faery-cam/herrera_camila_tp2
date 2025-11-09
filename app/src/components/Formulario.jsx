@@ -3,7 +3,7 @@ import validarForm from '../hooks/validarForm.js';
 
 export default function Formulario() {
 
-    const { } = validarForm({
+    const { formData, errors, handleChange, handleSubmit, submitted, resetForm } = validarForm({
         nombre: "",
         apellido: "",
         celular: "",
@@ -21,7 +21,7 @@ export default function Formulario() {
 
                 <p>Volver al <Link to="/" className=''>Inicio</Link></p>
 
-                <button onClick={() => setSubmitted(false)} className=''>
+                <button onClick={resetForm} className=''>
                     Hacer nueva consulta
                 </button>
 
