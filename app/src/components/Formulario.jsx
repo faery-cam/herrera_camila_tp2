@@ -36,12 +36,12 @@ export default function Formulario() {
             <h2 className=''>Formulario de Contacto</h2>
 
             <div>
-                <input name="nombre" value={formData.nombre} onChange={handleChange} placeholder='Nombre' className="" />
+                <input name="nombre" value={formData.nombre} onChange={handleChange} placeholder='Nombre' maxLength={30} className="" />
                 {errors.nombre && <p className="text-red-400">{errors.nombre}</p>}
             </div>
 
             <div>
-                <input name="apellido" value={formData.apellido} onChange={handleChange} placeholder='Apellido' className="" />
+                <input name="apellido" value={formData.apellido} onChange={handleChange} placeholder='Apellido' maxLength={30} className="" />
                 {errors.apellido && <p className="text-red-400">{errors.apellido}</p>}
             </div>
 
@@ -68,13 +68,13 @@ export default function Formulario() {
 
             {formData.motivo === "otro" && (
                 <div>
-                    <input name="otroMotivo" value={formData.otroMotivo} onChange={handleChange} placeholder='Especifique el motivo' className='' />
+                    <input name="otroMotivo" value={formData.otroMotivo} onChange={handleChange} placeholder='Especifique el motivo' maxLength={50} className='' />
                     {errors.otroMotivo && <p className="text-red-400">{errors.otroMotivo}</p>}
                 </div>
             )}
 
             <div>
-                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder='Escribí acá tu mensaje...' className='' ></textarea>
+                <textarea name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder='Escribí acá tu mensaje...' maxLength={300} className='' ></textarea>
                 {errors.mensaje && <p className="text-red-400">{errors.mensaje}</p>}
             </div>
 
