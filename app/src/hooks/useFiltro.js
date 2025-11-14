@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-export default function useFiltro() {
+export default function useFiltro(data) {
 
     const [filtros, setFiltros] = useState({
         miembros: [],
