@@ -7,7 +7,7 @@ export default function Miembros() {
     const [introVisible, setIntroVisible] = useState(true);
     const { activeMember, siguiente, anterior, seleccionarMember } = useMember();
 
-    const handleSelccionar = (id) => {
+    const handleSeleccionar = (id) => {
         seleccionarMember(id);
         setIntroVisible(false);
     }
@@ -15,7 +15,7 @@ export default function Miembros() {
     return (
         <div className="">
             {introVisible ? (
-                <MiembrosIntro onSelect={handleSelccionar} />
+                <MiembrosIntro onSelect={handleSeleccionar} />
             ) : (
                 <Member
                     activeMember={activeMember}

@@ -1,4 +1,5 @@
 import miembrosData from "../data/miembrosData.js";
+import { getAsset } from "../utils/assets.js";
 
 export default function MemberSelect({ activeMember, siguiente, anterior, seleccionarMember }) {
 
@@ -6,7 +7,7 @@ export default function MemberSelect({ activeMember, siguiente, anterior, selecc
         <div>
             <div>
                 <button onClick={anterior}></button>
-                <img src={activeMember.img} alt={activeMember.nombre} className="" />
+                <img src={getAsset(activeMember.img)} alt={activeMember.nombre} className="" />
                 <button onClick={siguiente}></button>
             </div>
 
