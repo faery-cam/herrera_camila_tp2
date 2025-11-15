@@ -2,7 +2,7 @@ const fotosData = [
     {
         id: 1,
         src: "/assets/img/galery/antsaSiete.jpg",
-        miembros: ["a"],
+        miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", "Rion"],
         tipo: "",
         titulo: "",
     },
