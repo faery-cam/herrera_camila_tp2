@@ -2,19 +2,19 @@ const miembrosData = [
     {
         id: "1",
         nombre: "Shibaken",
-        img: ["/assets/img/shibaken.webp"],
+        img: ["assets/img/shibaken.webp"],
         bio: "bla",
     },
     {
         id: "2",
         nombre: "Marin",
-        img: ["/assets/img/marin.webp"],
+        img: ["assets/img/marin.webp"],
         bio: "bla",
     },
     {
         id: "3",
         nombre: "Haneru",
-        img: ["/assets/img/haneru.webp"],
+        img: ["assets/img/haneru.webp"],
         bio: "bla",
     },
     {

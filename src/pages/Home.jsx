@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { getAsset } from "../utils/assets";
 
 export default function Home() {
   return (
 
-    <div className="h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/img/antsa.webp')" }}>
+    <div className="h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${getAsset('assets/img/antsa.webp')})` }}>
       <div>
         overlay placeholder
 

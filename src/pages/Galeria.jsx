@@ -1,6 +1,7 @@
 import fotosData from "../data/fotosData.js"
 import useFiltro from "../hooks/useFiltro.js"
 import FiltroSelect from "../components/FiltroSelect.jsx"
+import { getAsset } from "../utils/assets.js";
 
 export default function Galeria() {
     const { filtros, modo, setModo, toggleFiltro, cleanFiltros, datosFiltrados, } = useFiltro(fotosData);
@@ -25,7 +26,7 @@ export default function Galeria() {
 
             <section className="">
                 {datosFiltrados.map(foto => (
-                    <img key={foto.id} src={foto.src} alt={foto.titulo} />
+                    <img key={foto.id} src={getAsset(foto.src)} alt={foto.titulo} />
                 ))}
             </section>
         </>
