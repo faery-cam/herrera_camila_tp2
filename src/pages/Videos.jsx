@@ -44,7 +44,10 @@ export default function Videos() {
             </section>
 
             {videoActivo && (
-                <VideoModal video={videoActivo} onClose={() => setVideoActivo(null)} />
+                <VideoModal video={videoActivo}
+                    datosFiltrados={datosFiltrados}
+                    onChangeVideo={(vid) => setVideoActivo(vid)}
+                    onClose={() => setVideoActivo(null)} />
             )}
 
         </>
