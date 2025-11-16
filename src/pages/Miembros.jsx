@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useMember from "../hooks/useMember.js";
 import MiembrosIntro from "../components/MiembrosIntro.jsx";
 import Member from "../components/Member.jsx";
@@ -11,6 +11,10 @@ export default function Miembros() {
         seleccionarMember(id);
         setIntroVisible(false);
     }
+
+    useEffect(() => {
+        document.title = "Miembros"; //title
+    }, []);
 
     return (
         <div className="">

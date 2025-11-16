@@ -1,5 +1,12 @@
+import { useEffect } from "react"
+
 
 export default function Historia() {
+
+    useEffect(() => {
+        document.title = "Historia";
+    }, []);
+
     return (
         <>
             <section className="p-6">
@@ -7,5 +14,4 @@ export default function Historia() {
             </section>
         </>
     )
-
 }

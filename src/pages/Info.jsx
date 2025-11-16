@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Info() {
+
+    useEffect(() => {
+        document.title = "información";
+    }, []);
+
     return (
         <>
             <section className="p-6">

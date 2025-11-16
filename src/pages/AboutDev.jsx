@@ -1,5 +1,11 @@
+import { useEffect } from "react"
 
 export default function AboutDev() {
+
+    useEffect(() => {
+        document.title = "Sobre nosotros";
+    }, []);
+
     return (
         <>
             <div className="p-6">

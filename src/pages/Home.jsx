@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAsset } from "../utils/assets";
 
 export default function Home() {
+
+  useEffect(() => {
+    document.title = "Información";
+  }, []);
+  
   return (
 
     <div className="h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${getAsset('assets/img/antsa.webp')})` }}>

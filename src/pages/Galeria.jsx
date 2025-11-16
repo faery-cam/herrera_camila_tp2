@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import fotosData from "../data/fotosData.js"
 import useFiltro from "../hooks/useFiltro.js"
 import FiltroSelect from "../components/FiltroSelect.jsx"
@@ -10,6 +11,10 @@ export default function Galeria() {
         miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", "Rion"],
         estilo: []
     }
+
+    useEffect(() => {
+        document.title = "Fotos";
+    }, []);
 
     return (
         <>

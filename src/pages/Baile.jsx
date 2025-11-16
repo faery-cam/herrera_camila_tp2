@@ -1,5 +1,11 @@
+import { useEffect } from "react"
 
 export default function Baile() {
+
+useEffect(() => {
+  document.title = "Baile";
+}, []);
+
     return (
         <>
             <section className="p-6">

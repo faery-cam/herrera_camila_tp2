@@ -24,6 +24,10 @@ export default function Videos() {
         estilo: []
     }
 
+useEffect(() => {
+  document.title = "Videos";
+}, []);
+
     return (
         <>
             <h2 className="text-2xl font-bold">Galería de videos</h2>
