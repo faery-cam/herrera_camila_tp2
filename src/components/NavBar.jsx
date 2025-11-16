@@ -56,18 +56,27 @@ export default function NavBar() {
                     </div>
 
                     <ul className="flex flex-col gap-1">
-                        {paginasData.map((pag) =>
-                            <li key={pag.to}
-                                className='relative group py-2 px-3 cursor-pointer'
-                            >
-                                <NavLink to={pag.to}
-                                    className={({ isActive }) => linkClass(isActive)}
-                                    onClick={() => setOpen(false)}>
-                                    {pag.label}
-                                </NavLink>
+                        {paginasData.map((pag) => {
+                            const Icon = pag.icon;
 
-                                {pag.children && (
-                                    <ul className='
+                            return (
+                                <li key={pag.to}
+                                    className='relative group py-2 px-3 cursor-pointer'
+                                >
+                                    <NavLink to={pag.to}
+                                        className={({ isActive }) => linkClass(isActive)}
+                                        onClick={() => setOpen(false)}
+                                    >
+
+                                        <div className="flex items-center gap-1">
+                                            <Icon className="w-5 h-5 mr-2" />
+                                            {pag.label}
+                                        </div>
+
+                                    </NavLink>
+
+                                    {pag.children && (
+                                        <ul className='
                                     block flex-col mt-1lg:ml-1 
                                     scale-y-100 backdrop-opacity-100 
                                     lg:max-h-0 lg:scale-y-0 lg:opacity-0 lg:overflow-hidden
@@ -75,25 +84,31 @@ export default function NavBar() {
                                     lg:group-hover:max-h-screen lg:group-hover:scale-y-100 lg:group-hover:opacity-100
                                     
                                     transform origin-top transition-all duration-300 ease-in-out'
-                                    >
-                                        {pag.children.map((child) => (
+                                        >
+                                            {pag.children.map((child) => {
+                                                const Icon = child.icon;
 
-                                            <li key={child.to} className='py-1c px-4' >
-                                                <NavLink to={child.to}
-                                                    onClick={() => setOpen(false)}
-                                                    className={({ isActive }) => linkClass(isActive)}
+                                                return (
+                                                    <li key={child.to} className='py-1c px-4' >
+                                                        <NavLink to={child.to}
+                                                            onClick={() => setOpen(false)}
+                                                            className={({ isActive }) => linkClass(isActive)}
+                                                        >
+                                                            <div className="flex items-center gap-1">
+                                                                <Icon className="w-5 h-5 mr-2" />
+                                                                {child.label}
+                                                            </div>
+                                                        </NavLink>
+                                                    </li>
+                                                )
 
+                                            })}
+                                        </ul>
 
-                                                >
-                                                    {child.label}
-                                                </NavLink>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                )}
-                            </li>
-                        )}
+                                    )}
+                                </li>
+                            );
+                        })}
                     </ul>
                 </nav>
             </aside >
