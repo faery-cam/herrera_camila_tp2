@@ -15,9 +15,9 @@ import Baile from './pages/Baile.jsx';
 export default function App() {
 
   return (
-    <>
+    <div className="transition-all duration 30 md:pl-16">
       <Header />
-      <main>
+      <main >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />
@@ -31,7 +31,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
