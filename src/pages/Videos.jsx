@@ -39,7 +39,10 @@ export default function Videos() {
 
             <section className="">
                 {datosFiltrados.map(video => (
-                    <VideoCard key={video.id} video={video} onSelect={() => setVideoActivo(video)} />
+
+                    <div key={video.id} onClick={() => setVideoActivo(video)}>
+                        <VideoCard key={video.id} video={video} />
+                    </div>
                 ))}
             </section>
 
