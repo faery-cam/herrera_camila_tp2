@@ -1,29 +1,8 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from "react-router-dom";
+import paginasData from '../data/paginasData';
 
-const paginas = [
-    { to: '/', label: 'Home' },
-    {
-        to: '/info', label: 'sobre este sitio',
-        children: [
-            { to: '/aboutdev', label: 'tsuki' },
-            { to: '/contacto', label: 'contacto' },
-        ],
-    },
-    {
-        to: '/historia',
-        label: 'historia',
-        children: [{ to: '/miembros', label: 'miembros' }],
-    },
-    {
-        to: '/galeria',
-        label: 'galeria',
-        children: [{ to: '/videos', label: 'videos' }],
-    },
-    { to: '/baile', label: 'Baile' },
-]
-
-export default function NavBar({ compact }) {
+export default function NavBar() {
     const location = useLocation(); //datos de la url actual
     const [open, setOpen] = useState(false);
 
@@ -40,7 +19,6 @@ export default function NavBar({ compact }) {
 
     return (
         <>
-
             <button
                 aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
                 aria-expanded={open}
@@ -53,25 +31,35 @@ export default function NavBar({ compact }) {
                 </svg>
             </button>
 
-            {
-                open && (<div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/40" aria-hidden />)
-            }
+            {open && (<div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/40" aria-hidden />)}
 
             <aside id="main-menu"
                 role="navigation"
-                className={`fixed top-0 left-0 h-full w-64 bg-gray-900 text-white z-50 transform transition-transform ${open ? 'translate-x-0' : '-translate-x-full'}`}>
+                className={`
+                    fixed top-0 left-0 h-full  bg-pink-500 text-white z-50
+                
+                    w-64 transform transition-transform duration-300
+                ${open ? 'translate-x-0' : '-translate-x-full'}
+                
+                md:translate-x-0 md:w-16 md:hover:w-64
+                md:transition-all md:duration-300 md:transform-none
+                `}>
 
-                <div>
-                    <span className="sr-only">Menú</span>
-                    <button onClick={() => setOpen(false)} aria-label="Cerrar" className="text-white/80">
-                        ✕
-                    </button>
-                </div>
 
-                <nav>
+
+                <nav className='mt-6'>
+                    <div>
+                        <span className="sr-only">Menú</span>
+                        <button onClick={() => setOpen(false)} aria-label="Cerrar" className="text-white/80 md:hidden">
+                            ✕
+                        </button>
+                    </div>
+
                     <ul className="flex flex-col gap-1">
-                        {paginas.map((pag) =>
-                            <li key={pag.to}>
+                        {paginasData.map((pag) =>
+                            <li key={pag.to}
+                                className='relative group py-2 px-3 cursor-pointer'
+                            >
                                 <NavLink to={pag.to}
                                     className={({ isActive }) => linkClass(isActive)}
                                     onClick={() => setOpen(false)}>
@@ -79,13 +67,23 @@ export default function NavBar({ compact }) {
                                 </NavLink>
 
                                 {pag.children && (
-                                    <ul>
+                                    <ul className='
+                                    block flex-col mt-1lg:ml-1 
+                                    scale-y-100 backdrop-opacity-100 
+                                    lg:max-h-0 lg:scale-y-0 lg:opacity-0 lg:overflow-hidden
+
+                                    lg:group-hover:max-h-screen lg:group-hover:scale-y-100 lg:group-hover:opacity-100
+                                    
+                                    transform origin-top transition-all duration-300 ease-in-out'
+                                    >
                                         {pag.children.map((child) => (
 
-                                            <li key={child.to}>
+                                            <li key={child.to} className='py-1c px-4' >
                                                 <NavLink to={child.to}
-                                                    className={({ isActive }) => linkClass(isActive)}
                                                     onClick={() => setOpen(false)}
+                                                    className={({ isActive }) => linkClass(isActive)}
+
+
                                                 >
                                                     {child.label}
                                                 </NavLink>
@@ -99,6 +97,7 @@ export default function NavBar({ compact }) {
                     </ul>
                 </nav>
             </aside >
+
         </>
     )
 }
