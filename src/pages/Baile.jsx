@@ -8,10 +8,10 @@ export default function Baile() {
 
     return (
         <>
-            <section className="max-w-3xl mx-auto bg-white/20 backdrop-blur-md rounded-lg p-6 flex flex-col items-center text-center gap-4">
+            <section className="p-6 flex flex-col items-center text-center gap-4 bg-white border border-pink-200 rounded-md shadow-sm">
                 <h2 className="text-2xl font-bold">Baile</h2>
 
-                <p>El breakdance o breaking (bboying) es una danza que forma parte de la cultura del hip hop, junto con el grafiti, rap y djing. Este elemento nace en las comunidades afroamericanas de los pueblos azules neoyorquinos como Bronx y Brooklyn, en Estados Unidos, en la década de 1970.
+                <p >El breakdance o breaking (bboying) es una danza que forma parte de la cultura del hip hop, junto con el grafiti, rap y djing. Este elemento nace en las comunidades afroamericanas de los pueblos azules neoyorquinos como Bronx y Brooklyn, en Estados Unidos, en la década de 1970.
                 </p>
                 <p>
                     Pictograma deportivo del breaking

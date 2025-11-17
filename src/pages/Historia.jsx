@@ -9,7 +9,7 @@ export default function Historia() {
 
     return (
         <>
-            <section className="max-w-3xl mx-auto bg-white/20 backdrop-blur-md rounded-lg p-6 flex flex-col items-center text-center gap-4">
+            <section className="p-6 flex flex-col items-center text-center gap-4 bg-white border border-pink-200 rounded-md shadow-sm">
                 <h2 className="text-2xl font-bold">Historia del grupo</h2>
 
                 <p>ANATASHIA es un grupo de danza japonés de cinco miembros. Están representados por METEORA st.</p>

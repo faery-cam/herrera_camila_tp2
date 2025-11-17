@@ -22,7 +22,7 @@ export default function App() {
       <main className="flex-1 px-4 md:pl-20 md:pr-4 pb-8">
 
         <div className="relative w-full h-screen overflow-hidden">
-              <div className="fixed inset-0 bg-cover bg-no-repeat -z-10 bg-position-[center_20%] pointer-events-none " style={{ backgroundImage: `url(${getAsset('assets/img/antsa.webp')})`, opacity:0.3 }} />
+              <div className="fixed inset-0 bg-cover bg-no-repeat -z-10 bg-position-[center_20%] pointer-events-none " style={{ backgroundImage: `url(${getAsset('assets/img/antsa.webp')})`, opacity:0.2 }} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />

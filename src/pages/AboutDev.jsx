@@ -8,7 +8,7 @@ export default function AboutDev() {
 
     return (
         <>
-            <div className="p-6 flex flex-col items-center text-center gap-4">
+            <div className="p-6 flex flex-col items-center text-center gap-4 bg-white border border-pink-200 rounded-md shadow-sm">
                 <h2 className="text-2xl font-bold">Sobre nosotros</h2>
 
                 <p className="max-w-3xl text-black-100">

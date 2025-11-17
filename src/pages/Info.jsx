@@ -12,7 +12,7 @@ export default function Info() {
 
     return (
         <>
-            <section className="p-6 flex flex-col items-center text-center gap-4">
+            <section className="p-6 flex flex-col items-center text-center gap-4 bg-white border border-pink-200 rounded-md shadow-sm">
                 <h2 className="text-2xl font-bold">Sobre este sitio</h2>
 
                 <p className={pClass}>Si llegaste hasta acá eso no es casualidad! En esta página nos dedicamos a informar sobre el grupo Anatashia como guía introductoría para nuevos fans, aquellos que les interese los distintos tipos de danzas que practica el grupo o incluso a simples curiosos!</p>
