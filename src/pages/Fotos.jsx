@@ -51,10 +51,9 @@ export default function Fotos() {
                 </section>
             </div>
 
-            {imgActiva && (
+            {imgActiva !== null && (
                 <FotoModal
                     images={datosFiltrados}
-                    datosFiltrados={datosFiltrados}
                     indexInicial={imgActiva}
                     cerrar={() => setImgActiva(null)}
                 />
