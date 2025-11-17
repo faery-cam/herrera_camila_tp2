@@ -41,7 +41,7 @@ useEffect(() => {
                 cleanFiltros={cleanFiltros}
             />
 
-            <section className="">
+            <section className="flex justify-center md:justify-start flex-wrap gap-4">
                 {datosFiltrados.map(video => (
 
                     <div key={video.id} onClick={() => setVideoActivo(video)}>

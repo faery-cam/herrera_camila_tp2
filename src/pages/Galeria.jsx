@@ -18,22 +18,34 @@ export default function Galeria() {
 
     return (
         <>
-            <h2 className="text-2xl font-bold">Galería de fotos</h2>
+            <h2 className="text-2xl font-bold mb-4">Galería de fotos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6" >
 
-            <FiltroSelect
-                opciones={opciones}
-                filtros={filtros}
-                modo={modo}
-                setModo={setModo}
-                toggleFiltro={toggleFiltro}
-                cleanFiltros={cleanFiltros}
-            />
+                <aside>
+                    <FiltroSelect
+                        opciones={opciones}
+                        filtros={filtros}
+                        modo={modo}
+                        setModo={setModo}
+                        toggleFiltro={toggleFiltro}
+                        cleanFiltros={cleanFiltros}
+                    />
+                </aside>
 
-            <section className="">
-                {datosFiltrados.map(foto => (
-                    <img key={foto.id} src={getAsset(foto.src)} alt={foto.titulo} />
-                ))}
-            </section>
+                <section>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        {datosFiltrados.map(foto => (
+
+                            <div key={foto.id} className="aspect-square w-full overflow-hidden rounded-md bg-gray-200">
+
+                                <img src={getAsset(foto.src)} alt={foto.titulo} className="w-full h-full object-cover" />
+                                <p>{foto.titulo}</p>
+
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
         </>
     )
 
