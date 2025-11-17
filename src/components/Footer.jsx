@@ -3,7 +3,7 @@ import { GithubIcon, Instagram } from "lucide-react"
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-pink-500 text-black-200 mt-12 py-6 px-4">
+        <footer className="w-full bg-pink-500 text-black-200 mt-12 py-6 px-4 z-10">
 
             <div className=" max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8">
                 <div className="flex flex-col gap-3">

@@ -10,12 +10,13 @@ import Miembros from './pages/Miembros.jsx';
 import Fotos from './pages/Fotos.jsx';
 import Videos from './pages/Videos.jsx';
 import Baile from './pages/Baile.jsx';
-
+import Overlay from './components/Overlay.jsx';
 
 export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Overlay opacity={0.6}/>
       <Header />
 
       <main className="flex-1 px-4 md:pl-20 md:pr-4 pb-8">
