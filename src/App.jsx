@@ -15,12 +15,10 @@ import Baile from './pages/Baile.jsx';
 export default function App() {
 
   return (
-    <div className="min-h-screen
-                    px-4 md:pl-20 md:pr-4 
-                    pt-4 pb-8">
+    <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main >
+      <main className="flex-1 px-4 md:pl-20 md:pr-4 pb-8">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />
