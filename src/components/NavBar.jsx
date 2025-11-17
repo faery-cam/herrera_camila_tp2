@@ -36,13 +36,12 @@ export default function NavBar() {
             <aside id="main-menu"
                 role="navigation"
                 className={`
-                    fixed top-0 left-0 h-full  bg-pink-500 text-white z-50
-                
+                    fixed top-0 left-0 h-full bg-pink-500 text-white z-50
                     w-64 transform transition-transform duration-300
-                ${open ? 'translate-x-0' : '-translate-x-full'}
-                
-                md:translate-x-0 md:w-16 md:hover:w-64
-                md:transition-all md:duration-300 md:transform-none
+                    ${open ? 'translate-x-0' : '-translate-x-full'}
+                    md:translate-x-0 md:w-16 md:hover:w-64
+                    md:transition-all md:duration-300 md:transform-none
+                    group
                 `}>
 
 
@@ -58,38 +57,55 @@ export default function NavBar() {
                     <ul className="flex flex-col gap-1">
                         {paginasData.map((pag) => {
                             const Icon = pag.icon;
+                            const isChildActive = pag.children?.some(child => location.pathname === child.to);
+                            const isActive = location.pathname === pag.to;
 
                             return (
                                 <li key={pag.to}
-                                    className='relative group py-2 px-3 cursor-pointer'
+                                    className='relative group/parent py-2 px-3 cursor-pointer'
                                 >
-                                    <NavLink to={pag.to}
-                                        className={({ isActive }) => linkClass(isActive)}
-                                        onClick={() => setOpen(false)}
-                                    >
-
-                                        <div className="flex items-center gap-1">
-                                            <Icon className="w-5 h-5 mr-2" />
-                                            {pag.label}
+                                    {pag.to ? (
+                                        <NavLink
+                                            to={pag.to}
+                                            className={({ isActive }) => linkClass(isActive)}
+                                            onClick={() => setOpen(false)}
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <Icon className={`w-6 h-6 ${
+                                                    isActive || isChildActive
+                                                        ? "text-white"
+                                                        : "text-black/90"
+                                                }`} />
+                                                <div className="inline md:hidden md:group-hover:block">
+                                                    {pag.label}
+                                                </div>
+                                            </div>
+                                        </NavLink>
+                                    ) : (
+                                        <div
+                                            className="flex items-center gap-2 cursor-default"
+                                        >
+                                            <Icon className={`w-6 h-6 ${isChildActive ? "text-white" : "text-black/90"}`} />
+                                            <div className={`inline md:hidden md:group-hover:block ${isChildActive ? "text-white" : "text-black/90"}`}>
+                                                {pag.label}
+                                            </div>
                                         </div>
-
-                                    </NavLink>
+                                    )}
 
                                     {pag.children && (
-                                        <ul className='
-                                    block flex-col mt-1lg:ml-1 
-                                    scale-y-100 backdrop-opacity-100 
-                                    lg:max-h-0 lg:scale-y-0 lg:opacity-0 lg:overflow-hidden
-
-                                    lg:group-hover:max-h-screen lg:group-hover:scale-y-100 lg:group-hover:opacity-100
-                                    
-                                    transform origin-top transition-all duration-300 ease-in-out'
-                                        >
+                                        <ul class="
+                                            max-h-screen opacity-100 scale-y-100
+                                            md:max-h-0 md:opacity-0 md:scale-y-0 md:overflow-hidden
+                                            md:group-hover/parent:max-h-screen
+                                            md:group-hover/parent:opacity-100
+                                            md:group-hover/parent:scale-y-100
+                                            transition-all duration-300 origin-top
+                                        ">
                                             {pag.children.map((child) => {
                                                 const Icon = child.icon;
 
                                                 return (
-                                                    <li key={child.to} className='py-1c px-4' >
+                                                    <li key={child.to} className='py-1 px-4' >
                                                         <NavLink to={child.to}
                                                             onClick={() => setOpen(false)}
                                                             className={({ isActive }) => linkClass(isActive)}

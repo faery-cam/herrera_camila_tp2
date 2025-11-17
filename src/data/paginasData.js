@@ -1,4 +1,4 @@
-import { House, UserPen, Film, PawPrint, Sparkles, ScrollText, UsersRound, Spotlight, Image as ImageIcon, } from "lucide-react";
+import { House, UserPen, Film, PawPrint, Sparkles, ScrollText, UsersRound, Spotlight, Camera, Image as ImageIcon } from "lucide-react";
 
 const paginasData = [
     { to: '/', label: 'Home', icon: House, },
@@ -14,8 +14,12 @@ const paginasData = [
         children: [{ to: '/miembros', label: 'Miembros', icon: UsersRound, }],
     },
     {
-        to: '/galeria', label: 'Galeria', icon: ImageIcon,
-        children: [{ to: '/videos', label: 'Videos', icon: Film, }],
+        label: 'Galería', icon: ImageIcon,
+        
+        children: [
+            {to: '/galeria', label: 'Fotos', icon: Camera},
+            { to: '/videos', label: 'Videos', icon: Film, }
+        ],
     },
     { to: '/baile', label: 'Baile', icon: Spotlight, },
 ];
