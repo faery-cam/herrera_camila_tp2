@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import videosData from "../data/videosData.js";
 import VideoCard from "../components/VideoCard.jsx";
 import VideoModal from "../components/VideoModal.jsx";
@@ -7,7 +8,9 @@ import FiltroSelect from "../components/FiltroSelect.jsx";
 
 
 export default function Videos() {
-    const { filtros, modo, setModo, toggleFiltro, cleanFiltros, datosFiltrados, } = useFiltro(videosData);
+    const filtroInicial = useLocation().state?.filtroInicial;
+
+    const { filtros, modo, setModo, toggleFiltro, cleanFiltros, datosFiltrados, } = useFiltro(videosData, filtroInicial);
 
     const [videoActivo, setVideoActivo] = useState(null);
 

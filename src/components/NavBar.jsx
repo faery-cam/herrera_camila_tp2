@@ -61,7 +61,7 @@ export default function NavBar() {
                             const isActive = location.pathname === pag.to;
 
                             return (
-                                <li key={pag.to}
+                                <li key={pag.label}
                                     className='relative group/parent py-2 px-3 cursor-pointer'
                                 >
                                     {pag.to ? (
@@ -71,11 +71,10 @@ export default function NavBar() {
                                             onClick={() => setOpen(false)}
                                         >
                                             <div className="flex items-center gap-2">
-                                                <Icon className={`w-6 h-6 ${
-                                                    isActive || isChildActive
+                                                <Icon className={`w-6 h-6 ${isActive || isChildActive
                                                         ? "text-white"
                                                         : "text-black/90"
-                                                }`} />
+                                                    }`} />
                                                 <div className="inline md:hidden md:group-hover:block">
                                                     {pag.label}
                                                 </div>
@@ -93,7 +92,7 @@ export default function NavBar() {
                                     )}
 
                                     {pag.children && (
-                                        <ul class="
+                                        <ul className="
                                             max-h-screen opacity-100 scale-y-100
                                             md:max-h-0 md:opacity-0 md:scale-y-0 md:overflow-hidden
                                             md:group-hover/parent:max-h-screen
@@ -105,7 +104,7 @@ export default function NavBar() {
                                                 const Icon = child.icon;
 
                                                 return (
-                                                    <li key={child.to} className='py-1 px-4' >
+                                                    <li key={child.label} className='py-1 px-4' >
                                                         <NavLink to={child.to}
                                                             onClick={() => setOpen(false)}
                                                             className={({ isActive }) => linkClass(isActive)}

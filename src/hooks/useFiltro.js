@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 
-export default function useFiltro(data) {
+export default function useFiltro(data, filtroInicial = null) {
 
-    const [filtros, setFiltros] = useState({
+    const [filtros, setFiltros] = useState(() => filtroInicial || {
         miembros: [],
         estilo: [],
     })
