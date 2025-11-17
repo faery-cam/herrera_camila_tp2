@@ -15,8 +15,8 @@ export default function Formulario() {
 
     if (submitted) {
         return (
-            <div>
-                <h3>{formData.nombre}, gracias por contactarte con nosotros.</h3>
+            <div className="p-6 flex flex-col items-center text-center gap-4 bg-white border border-pink-200 rounded-md shadow-sm">
+                <h3 className="text-2xl font-bold">{formData.nombre}, gracias por contactarte con nosotros.</h3>
                 <p> Ya enviamos tu consulta! Pronto nos vamos a estar comunicando con vos.</p>
 
                 <p>Volver al <Link to="/" className=''>Inicio</Link></p>
