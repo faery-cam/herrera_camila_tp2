@@ -31,7 +31,7 @@ export default function Formulario() {
 
     return (
 
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center ">
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
 
             <h2 className='text-xl font-semibold mb-4'>Formulario de Contacto</h2>

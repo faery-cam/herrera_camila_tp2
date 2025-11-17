@@ -9,7 +9,7 @@ export default function Contacto() {
 
     return (
         <section className="p-6">
-            <h2 className="text-2xl font-bold">Contacto</h2>
+            <h2 className="text-2xl font-bold text-center mb-4">Contacto</h2>
             <Formulario />
 
         </section>
