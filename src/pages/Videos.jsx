@@ -24,39 +24,41 @@ export default function Videos() {
         estilo: []
     }
 
-useEffect(() => {
-  document.title = "Videos";
-}, []);
+    useEffect(() => {
+        document.title = "Videos";
+    }, []);
 
     return (
         <>
-            <h2 className="text-2xl font-bold">Galería de videos</h2>
+            <h2 className="text-2xl font-bold mb-4">Galería de videos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6" >
+                <FiltroSelect
+                    opciones={opciones}
+                    filtros={filtros}
+                    modo={modo}
+                    setModo={setModo}
+                    toggleFiltro={toggleFiltro}
+                    cleanFiltros={cleanFiltros}
+                />
 
-            <FiltroSelect
-                opciones={opciones}
-                filtros={filtros}
-                modo={modo}
-                setModo={setModo}
-                toggleFiltro={toggleFiltro}
-                cleanFiltros={cleanFiltros}
-            />
+                <section>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {datosFiltrados.map(video => (
 
-            <section className="flex justify-center md:justify-start flex-wrap gap-4">
-                {datosFiltrados.map(video => (
-
-                    <div key={video.id} onClick={() => setVideoActivo(video)}>
-                        <VideoCard key={video.id} video={video} />
+                            <div key={video.id} onClick={() => setVideoActivo(video)} >
+                                <VideoCard key={video.id} video={video} />
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </section>
+                </section>
 
-            {videoActivo && (
-                <VideoModal video={videoActivo}
-                    datosFiltrados={datosFiltrados}
-                    onChangeVideo={(vid) => setVideoActivo(vid)}
-                    onClose={() => setVideoActivo(null)} />
-            )}
-
+                {videoActivo && (
+                    <VideoModal video={videoActivo}
+                        datosFiltrados={datosFiltrados}
+                        onChangeVideo={(vid) => setVideoActivo(vid)}
+                        onClose={() => setVideoActivo(null)} />
+                )}
+            </div>
         </>
     )
 }

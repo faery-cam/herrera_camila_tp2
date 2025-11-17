@@ -15,8 +15,11 @@ import Baile from './pages/Baile.jsx';
 export default function App() {
 
   return (
-    <div className="transition-all duration 30 md:pl-16">
+    <div className="min-h-screen
+                    px-4 md:pl-20 md:pr-4 
+                    pt-4 pb-8">
       <Header />
+      
       <main >
         <Routes>
           <Route path="/" element={<Home />} />

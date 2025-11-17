@@ -19,9 +19,9 @@ export default function Galeria() {
     return (
         <>
             <h2 className="text-2xl font-bold mb-4">Galería de fotos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6" >
+            <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6" >
 
-                <aside>
+           
                     <FiltroSelect
                         opciones={opciones}
                         filtros={filtros}
@@ -30,7 +30,7 @@ export default function Galeria() {
                         toggleFiltro={toggleFiltro}
                         cleanFiltros={cleanFiltros}
                     />
-                </aside>
+            
 
                 <section>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
