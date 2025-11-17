@@ -9,7 +9,6 @@ export default function Galeria() {
 
     const opciones = {
         miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", "Rion"],
-        estilo: []
     }
 
     useEffect(() => {

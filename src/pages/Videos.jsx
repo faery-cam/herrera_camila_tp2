@@ -21,7 +21,7 @@ export default function Videos() {
 
     const opciones = {
         miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", "Rion"],
-        estilo: []
+        estilo: ["energético", "tierno", "dramático", "divertido"]
     }
 
     useEffect(() => {
