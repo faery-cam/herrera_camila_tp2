@@ -33,6 +33,7 @@ export default function Videos() {
 
     return (
         <>
+        
             <h2 className="text-2xl font-bold mb-4">Galería de videos</h2>
             <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6" >
                 <FiltroSelect

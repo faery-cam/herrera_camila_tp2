@@ -9,45 +9,61 @@ const fotosData = [
     {
         id: 2,
         src: "assets/img/galery/handsCrown.jpg",
-        miembros: ["a"],
+        miembros: [""],
         tipo: "",
         titulo: "",
     },
     {
         id: 3,
         src: "assets/img/galery/handsStar.jpg",
-        miembros: ["a"],
+        miembros: [""],
         tipo: "",
         titulo: "",
     },
     {
         id: 4,
         src: "assets/img/galery/selfieMK.jpg",
-        miembros: ["a"],
+        miembros: ["Masato", "Kanata",],
         tipo: "",
         titulo: "",
     },
     {
         id: 5,
         src: "assets/img/galery/selfieSM.jpg",
-        miembros: ["a"],
+        miembros: ["Shibaken", "Masato"],
         tipo: "",
         titulo: "",
     },
     {
         id: 6,
         src: "assets/img/galery/showHR.jpg",
-        miembros: ["a"],
+        miembros: ["Haneru", "Rion"],
         tipo: "",
         titulo: "",
     },
     {
         id: 7,
-        src: "assets/img/galery/showMM.jpg",
-        miembros: ["a"],
+        src: "assets/img/galery/antsastage.webp",
+        miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", "Rion"],
         tipo: "",
         titulo: "",
     },
+    {
+        id: 8,
+        src: "assets/img/galery/antsa_wide.webp",
+        miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", ],
+        tipo: "",
+        titulo: "",
+    },
+    {
+        id: 9,
+        src: "assets/img/galery/antsabeach.webp",
+        miembros: ["Shibaken", "Marin", "Haneru", "Kanata", "Naoya", "Masato", ],
+        tipo: "",
+        titulo: "",
+    },
+
+
 ]
 
 export default fotosData;
