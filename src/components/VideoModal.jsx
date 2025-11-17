@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo } from "react"
+import { X } from "lucide-react";
 import VideoCard from "./VideoCard";
 
 export default function VideoModal({ video, datosFiltrados, onChangeVideo, onClose }) {
@@ -29,7 +30,9 @@ export default function VideoModal({ video, datosFiltrados, onChangeVideo, onClo
         <div onClick={onClose} className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
             <div onClick={e => e.stopPropagation()} className="bg-black rounded-lg p-4 max-w-3xl w-full">
 
-                <button onClick={onClose} className="mb-2" >✕</button>
+                <button onClick={onClose} className="mb-2" >
+                    <X />
+                </button>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
@@ -52,7 +55,7 @@ export default function VideoModal({ video, datosFiltrados, onChangeVideo, onClo
                             allowFullScreen
                             className="w-full aspect-video"
                         ></iframe>
-                        
+
                         <h3 className="font-bold mt-2">{video.titulo}</h3>
                     </div>
 

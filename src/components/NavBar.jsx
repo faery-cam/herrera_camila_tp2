@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from "react-router-dom";
+import { X, Menu } from 'lucide-react';
 import paginasData from '../data/paginasData';
 
 export default function NavBar() {
@@ -26,9 +27,8 @@ export default function NavBar() {
                 onClick={() => setOpen((prev) => !prev)}
                 className="z-50 fixed top-4 left-4 w-10 h-10 rounded bg-black/40 text-white flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <Menu />
+
             </button>
 
             {open && (<div onClick={() => setOpen(false)} className="fixed inset-0 bg-black/40" aria-hidden />)}
@@ -44,13 +44,11 @@ export default function NavBar() {
                     group
                 `}>
 
-
-
                 <nav className='mt-6'>
                     <div>
                         <span className="sr-only">Menú</span>
                         <button onClick={() => setOpen(false)} aria-label="Cerrar" className="text-white/80 md:hidden">
-                            ✕
+                            <X />
                         </button>
                     </div>
 
@@ -72,12 +70,12 @@ export default function NavBar() {
                                         >
                                             <div className="flex items-center gap-2">
                                                 <Icon className={`w-6 h-6 ${isActive || isChildActive
-                                                        ? "text-white"
-                                                        : "text-black/90"
+                                                    ? "text-white"
+                                                    : "text-black/90"
                                                     }`} />
-                                                <div className="inline md:hidden md:group-hover:block">
+                                                <p className="inline md:hidden md:group-hover:block">
                                                     {pag.label}
-                                                </div>
+                                                </p>
                                             </div>
                                         </NavLink>
                                     ) : (
@@ -115,11 +113,9 @@ export default function NavBar() {
                                                             </div>
                                                         </NavLink>
                                                     </li>
-                                                )
-
+                                                );
                                             })}
                                         </ul>
-
                                     )}
                                 </li>
                             );
@@ -127,7 +123,6 @@ export default function NavBar() {
                     </ul>
                 </nav>
             </aside >
-
         </>
     )
 }
