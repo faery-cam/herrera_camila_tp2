@@ -4,7 +4,7 @@ import useFiltro from "../hooks/useFiltro.js"
 import FiltroSelect from "../components/FiltroSelect.jsx"
 import { getAsset } from "../utils/assets.js";
 
-export default function Galeria() {
+export default function Fotos() {
     const { filtros, modo, setModo, toggleFiltro, cleanFiltros, datosFiltrados, } = useFiltro(fotosData);
 
     const opciones = {

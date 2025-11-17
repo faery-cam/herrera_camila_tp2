@@ -7,7 +7,7 @@ import AboutDev from './pages/AboutDev.jsx';
 import Contacto from './pages/Contacto.jsx';
 import Historia from './pages/Historia.jsx';
 import Miembros from './pages/Miembros.jsx';
-import Galeria from './pages/Galeria.jsx';
+import Fotos from './pages/Fotos.jsx';
 import Videos from './pages/Videos.jsx';
 import Baile from './pages/Baile.jsx';
 
@@ -19,7 +19,7 @@ export default function App() {
                     px-4 md:pl-20 md:pr-4 
                     pt-4 pb-8">
       <Header />
-      
+
       <main >
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/miembros" element={<Miembros />} />
-          <Route path="/galeria" element={<Galeria />} />
+          <Route path="/fotos" element={<Fotos />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/baile" element={<Baile />} />
         </Routes>

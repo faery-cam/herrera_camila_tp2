@@ -17,7 +17,7 @@ const paginasData = [
         label: 'Galería', icon: ImageIcon,
         
         children: [
-            {to: '/galeria', label: 'Fotos', icon: Camera},
+            {to: '/fotos', label: 'Fotos', icon: Camera},
             { to: '/videos', label: 'Videos', icon: Film, }
         ],
     },
